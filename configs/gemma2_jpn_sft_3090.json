@@ -1,0 +1,37 @@
+{
+  "name": "gemma2-jpn-pun-sft-rtx3090",
+  "source": "Minami et al. 2025 inspired practical configuration",
+  "model_name": "google/gemma-2-2b-jpn-it",
+  "task": "pun_sft",
+  "data_files": {
+    "train": "data/pun_sft/train.jsonl",
+    "validation": "data/pun_sft/validation.jsonl"
+  },
+  "output_dir": "outputs/gemma2-jpn-pun-sft",
+  "seed": 42,
+  "quantization": {
+    "load_in_4bit": true,
+    "quant_type": "nf4",
+    "compute_dtype": "bfloat16",
+    "double_quant": true
+  },
+  "lora": {
+    "r": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj"]
+  },
+  "training": {
+    "learning_rate": 0.00002,
+    "num_train_epochs": 5,
+    "per_device_train_batch_size": 1,
+    "gradient_accumulation_steps": 16,
+    "warmup_ratio": 0.1,
+    "lr_scheduler_type": "cosine",
+    "bf16": true,
+    "gradient_checkpointing": true,
+    "max_length": 768,
+    "report_to": "none"
+  },
+  "notes": "Designed to fit a 24 GB RTX 3090 with QLoRA. The 2025 paper uses SFT -> preference optimization for Japanese juxtaposed puns, but this file is explicitly a practical local config, not a claim of exact paper hyperparameters. Gemma access requires accepting Google's license on Hugging Face."
+}

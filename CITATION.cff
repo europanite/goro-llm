@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+title: Japanese Goro LLM Research
+message: "If you use this repository in research, please cite this software and the papers listed in docs/literature.md."
+type: software
+authors:
+  - family-names: Ikeda
+    given-names: Masaaki
+version: 0.1.0
+date-released: 2026-09-27
+license: MIT

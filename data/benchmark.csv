@@ -1,0 +1,5 @@
+id,target,target_reading,fact,protected
+log_integral,log x の積分,えっくすかけるろぐえっくすひくえっくすたすしー,"∫ log x dx = x log x − x + C",かける|ひく|たすしー
+triangle_angle,三角形の内角の和,ひゃくはちじゅうど,"三角形の内角の和は180度",
+geometric_sum,無限等比級数,いちわるいちひくあーる,"Σₙ₌₀^∞ rⁿ = 1/(1−r)（|r|<1）",ひく
+matrix_inverse_2x2,2×2行列の逆行列,えーでぃーひくびーしー,"det(A)=ad−bc が0でないとき A⁻¹=1/(ad−bc)[[d,−b],[−c,a]]",ひく

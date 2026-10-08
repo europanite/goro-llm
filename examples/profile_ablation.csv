@@ -1,0 +1,13 @@
+﻿task_id,profile,candidate_count,top_word,top_word_reading,target_span,top_similarity,target_consonants,replacement_consonants,target_vowels,replacement_vowels
+log_integral,template,3,キス,きす,くす,0.71,k-s,k-s,uu,iu
+log_integral,balanced,3,キス,きす,くす,0.75,k-s,k-s,uu,iu
+log_integral,consonant,3,キス,きす,くす,0.825,k-s,k-s,uu,iu
+triangle_angle,template,5,橋,はし,はち,0.9265,h-ch,h-sh,ai,ai
+triangle_angle,balanced,5,橋,はし,はち,0.9125,h-ch,h-sh,ai,ai
+triangle_angle,consonant,5,橋,はし,はち,0.8862,h-ch,h-sh,ai,ai
+geometric_sum,template,5,丸,まる,わる,0.79,w-r,m-r,au,au
+geometric_sum,balanced,2,丸,まる,わる,0.75,w-r,m-r,au,au
+geometric_sum,consonant,2,丸,まる,わる,0.675,w-r,m-r,au,au
+matrix_inverse_2x2,template,0,,,,,,,,
+matrix_inverse_2x2,balanced,0,,,,,,,,
+matrix_inverse_2x2,consonant,0,,,,,,,,

@@ -1,0 +1,37 @@
+{
+  "name": "gemma2-jpn-pun-dpo-rtx3090",
+  "source": "Minami et al. 2025 + SMART-style preference optimization",
+  "model_name": "outputs/gemma2-jpn-pun-sft",
+  "data_files": {
+    "train": "data/pun_dpo/train.jsonl",
+    "validation": "data/pun_dpo/validation.jsonl"
+  },
+  "output_dir": "outputs/gemma2-jpn-pun-dpo",
+  "seed": 42,
+  "quantization": {
+    "load_in_4bit": true,
+    "quant_type": "nf4",
+    "compute_dtype": "bfloat16",
+    "double_quant": true
+  },
+  "lora": {
+    "r": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj"]
+  },
+  "training": {
+    "beta": 0.1,
+    "learning_rate": 0.000001,
+    "num_train_epochs": 2,
+    "per_device_train_batch_size": 1,
+    "gradient_accumulation_steps": 16,
+    "warmup_ratio": 0.1,
+    "lr_scheduler_type": "cosine",
+    "bf16": true,
+    "gradient_checkpointing": true,
+    "max_length": 768,
+    "report_to": "none"
+  },
+  "notes": "Human pun = chosen; SFT-generated pun = rejected, following the structure of Minami et al. 2025. Hyperparameters here are conservative 24 GB defaults, not asserted as exact paper settings."
+}

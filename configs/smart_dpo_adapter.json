@@ -1,0 +1,7 @@
+{
+  "name": "smart-data-dpo-adapter",
+  "source": "Balepur et al., EMNLP 2024",
+  "dataset": "nbalepur/Mnemonic_Chosen_Rejected",
+  "columns": {"prompt": "prompt", "chosen": "chosen", "rejected": "rejected"},
+  "notes": "Use scripts/fetch_smart.py to download the public dataset. The original SMART model is LLaMA-2 70B and is not targeted at Japanese; this dataset is included as a framework/evaluation reference for preference learning, not as Japanese training data."
+}

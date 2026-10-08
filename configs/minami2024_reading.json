@@ -1,0 +1,36 @@
+{
+  "name": "minami2024-reading-lora",
+  "source": "JSAI 2024 2G5-GS-6-03",
+  "model_name": "cyberagent/calm2-7b-chat",
+  "task": "reading_bidirectional",
+  "data_files": {
+    "train": "data/ndl_reading/train.jsonl",
+    "validation": "data/ndl_reading/validation.jsonl"
+  },
+  "output_dir": "outputs/minami2024-reading",
+  "seed": 42,
+  "lora": {
+    "r": 16,
+    "alpha": 64,
+    "dropout": 0.0,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "embed_tokens",
+      "lm_head"
+    ]
+  },
+  "training": {
+    "learning_rate": 0.0001,
+    "num_train_epochs": 1,
+    "per_device_train_batch_size": 1,
+    "gradient_accumulation_steps": 20,
+    "warmup_ratio": 0.2,
+    "lr_scheduler_type": "cosine",
+    "bf16": true,
+    "gradient_checkpointing": true,
+    "max_length": 1024,
+    "report_to": "none"
+  },
+  "notes": "Paper reports effective batch size 20 and LoRA (r=16, alpha=64) on q/k plus embedding and lm-head. This config uses microbatch 1 x accumulation 20 for a single GPU. The paper also adds KL divergence to the pre-fine-tuning distribution (lambda=0.05); the generic TRL SFT runner does not implement that custom loss, so this config is a near-reproduction rather than bit-exact."
+}

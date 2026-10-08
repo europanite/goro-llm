@@ -16,53 +16,6 @@ The specific question here is narrower:
 
 > **Does explicit Japanese phonetic retrieval—especially consonant-aware retrieval—improve the quality of LLM-generated study mnemonics?**
 
-## Repository layout
-
-```text
-japanese-goro-llm/
-├── data/
-│   ├── benchmark.csv
-│   └── dictionary.csv
-├── configs/
-│   ├── minami2024_reading.json
-│   ├── minami2024_pun_sft.json
-│   ├── gemma2_jpn_sft_3090.json
-│   ├── gemma2_jpn_dpo_3090.json
-│   └── smart_dpo_adapter.json
-├── docs/
-│   ├── datasets-frameworks.md
-│   ├── experiment-design.md
-│   ├── literature.md
-│   └── references.bib
-├── external_data/
-│   └── README.md
-├── goro_llm/
-│   ├── cli.py
-│   ├── dictionary.py
-│   ├── experiment.py
-│   ├── generator.py
-│   ├── human_eval.py
-│   ├── ollama.py
-│   ├── phonetics.py
-│   ├── rank.py
-│   ├── research_data.py
-│   ├── retrieval.py
-│   └── training_data.py
-├── scripts/
-│   ├── fetch_smart.py
-│   ├── prepare_dpo_pairs.py
-│   ├── prepare_ndl_aozora.py
-│   └── prepare_pun_data.py
-├── training/
-│   ├── train_dpo.py
-│   └── train_sft.py
-├── prompts/
-├── tests/
-├── compose.yml
-├── compose.gpu.yml
-└── pyproject.toml
-```
-
 ## 1. Setup
 
 ```bash
